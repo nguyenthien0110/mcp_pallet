@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/app/context/AuthContext";
+import { Eye, EyeOff } from "lucide-react";
 
 export default function AuthForm() {
   const [client, setClient] = useState("");
@@ -59,10 +60,10 @@ export default function AuthForm() {
           />
           <button
             type="button"
-            className="absolute right-2 top-2 text-sm text-blue-600"
+            className="absolute right-2 top-2 text-gray-600 hover:text-black"
             onClick={() => setShowPassword((prev) => !prev)}
           >
-            {showPassword ? "Hide" : "Show"}
+            {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
           </button>
         </div>
 

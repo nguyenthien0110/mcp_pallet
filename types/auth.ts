@@ -1,3 +1,5 @@
+import { RowDataPacket } from "mysql2";
+
 export type Role = "admin" | "user";
 
 export interface User {
@@ -12,4 +14,11 @@ export interface TokenPayload {
   iat: number;
   exp: number;
   type?: "refresh";
+}
+
+export interface UserRow extends RowDataPacket {
+  id: number;
+  client: string;
+  key: string;
+  created_at: string;
 }
